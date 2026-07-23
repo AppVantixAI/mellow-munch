@@ -96,6 +96,16 @@ h3,
   backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--foam) 88%, transparent);
   border-bottom: 2px solid var(--line);
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.site-header.is-scrolled {
+  background: color-mix(in srgb, var(--foam) 94%, white);
+  border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--teal-deep) 12%, transparent);
 }
 
 .header-inner {
@@ -150,6 +160,7 @@ h3,
 .nav a {
   padding: 0.4rem 0.2rem;
   opacity: 0.82;
+  transition: opacity 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .nav a:hover,
@@ -174,6 +185,12 @@ h3,
   opacity: 1;
   box-shadow: none;
   line-height: 1.2;
+  transition: transform 0.22s ease, background 0.22s ease;
+}
+
+.nav a.nav-cta:hover {
+  transform: translateY(-2px);
+  background: var(--teal-deep);
 }
 
 .nav-toggle {
@@ -242,7 +259,11 @@ h3,
   font-weight: 800;
   line-height: 1.2;
   cursor: pointer;
-  transition: transform 0.18s ease, background 0.18s ease;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .btn:hover {
@@ -505,11 +526,14 @@ h3,
   border: 3px solid var(--ink);
   border-radius: calc(var(--radius) + 0.2rem);
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
 }
 
 .theme-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
 }
 
 .theme-card .media {
@@ -522,6 +546,11 @@ h3,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.theme-card:hover .media img {
+  transform: scale(1.05);
 }
 
 .theme-card .body {
@@ -754,6 +783,15 @@ h3,
   font-size: 0.92rem;
   font-weight: 800;
   line-height: 1.2;
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--ink);
 }
 
 .chip:has(input:checked) {
@@ -766,6 +804,14 @@ h3,
   margin: 0;
   color: var(--teal-deep);
   font-weight: 800;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.form-status.is-live {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq {
@@ -874,13 +920,100 @@ h3,
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reward,
+.logo-card,
+.feature-list li,
+.form-panel,
+.pricing-panel,
+.campaign-bar {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.reward:hover,
+.logo-card:hover,
+.feature-list li:hover {
+  transform: translateY(-4px);
+}
+
+.inside-media,
+.lifestyle-media,
+.hero-media {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.inside-media:hover,
+.lifestyle-media:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.hero-badge {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-media:hover .hero-badge {
+  transform: translateY(-2px);
+}
+
+/* First-load hero choreography */
+.motion-ready .hero .eyebrow,
+.motion-ready .hero h1,
+.motion-ready .hero .lede,
+.motion-ready .hero .cta-row,
+.motion-ready .hero .campaign-bar,
+.motion-ready .hero-media {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.motion-ready.is-booted .hero .eyebrow,
+.motion-ready.is-booted .hero h1,
+.motion-ready.is-booted .hero .lede,
+.motion-ready.is-booted .hero .cta-row,
+.motion-ready.is-booted .hero .campaign-bar,
+.motion-ready.is-booted .hero-media {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-ready.is-booted .hero .eyebrow { transition-delay: 0.05s; }
+.motion-ready.is-booted .hero h1 { transition-delay: 0.12s; }
+.motion-ready.is-booted .hero .lede { transition-delay: 0.2s; }
+.motion-ready.is-booted .hero .cta-row { transition-delay: 0.28s; }
+.motion-ready.is-booted .hero .campaign-bar { transition-delay: 0.36s; }
+.motion-ready.is-booted .hero-media { transition-delay: 0.2s; }
+
+.nav.open {
+  animation: nav-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes nav-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes marquee {
@@ -1134,8 +1267,14 @@ h3,
 .progress > span {
   display: block;
   height: 100%;
-  width: var(--pct, 42%);
+  width: 0;
   background: var(--chili);
+  transition: width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.progress.is-filled > span,
+.progress.is-visible > span {
+  width: var(--pct, 42%);
 }
 
 .reward-grid {
@@ -1290,5 +1429,20 @@ h3,
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .motion-ready .hero .eyebrow,
+  .motion-ready .hero h1,
+  .motion-ready .hero .lede,
+  .motion-ready .hero .cta-row,
+  .motion-ready .hero .campaign-bar,
+  .motion-ready .hero-media {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .progress > span {
+    width: var(--pct, 42%) !important;
   }
 }
