@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Mellow Munch">
+  <rect width="128" height="128" rx="28" fill="#FFC857"/>
+  <rect x="8" y="8" width="112" height="112" rx="22" fill="none" stroke="#122820" stroke-width="4"/>
+  <!-- Twin M monogram -->
+  <path
+    d="M28 92V40l18 34 18-34v52"
+    fill="none"
+    stroke="#0D7377"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M64 92V40l18 34 18-34v52"
+    fill="none"
+    stroke="#E4572E"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- snack accent chip -->
+  <circle cx="98" cy="30" r="8" fill="#0D7377"/>
+  <circle cx="98" cy="30" r="3.5" fill="#FFC857"/>
+</svg>

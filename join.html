@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./images/logo-mark.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Back Mellow Munch on Kickstarter — get launch alerts and pick your reward tier." />
+    <title>Back this project — Mellow Munch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="logo" href="./">
+          <img src="./images/logo-mark.svg" alt="" width="40" height="40" />
+          <span class="logo-word">Mellow<span>Munch</span></span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="./">Campaign</a>
+          <a href="./themes.html">Themes</a>
+          <a href="./index.html#rewards">Rewards</a>
+          <a href="./about.html">Brand</a>
+          <a class="nav-cta" href="./join.html" aria-current="page">Back this project</a>
+        </nav>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="wrap join-layout">
+          <div>
+            <p class="eyebrow">Kickstarter waitlist</p>
+            <h1 class="display" style="font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 0.75rem">Be first when we go live</h1>
+            <p style="color: var(--ink-soft); max-width: 38ch">
+              This mock captures emails and preferred reward tiers until the real Kickstarter launches. No charge yet.
+            </p>
+            <div class="campaign-bar" style="margin-top: 1.15rem">
+              <div class="progress" style="--pct: 42%"><span></span></div>
+              <div class="campaign-stats">
+                <div><strong>$12,640</strong><span>of $30,000 goal</span></div>
+                <div><strong>214</strong><span>backers</span></div>
+                <div><strong>28</strong><span>days left</span></div>
+              </div>
+            </div>
+            <div class="lifestyle-media reveal" style="margin-top: 1.25rem">
+              <img src="./images/hero-box-movie-night.png" alt="Open snack box preview" width="1536" height="1024" />
+            </div>
+          </div>
+
+          <div class="form-panel reveal">
+            <h2 style="margin: 0; font-size: 1.45rem">Get launch alerts</h2>
+            <p style="margin: 0; color: var(--ink-soft)">We’ll ping you the hour the campaign opens.</p>
+            <form data-form="preorder">
+              <label class="sr-only" for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" />
+              <label class="sr-only" for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@snackmail.com" />
+              <fieldset class="chip-row">
+                <legend class="sr-only">Preferred reward</legend>
+                <label class="chip"><input type="radio" name="theme" value="movie" checked /> $29 First Box</label>
+                <label class="chip"><input type="radio" name="theme" value="game" /> $79 Season Pass</label>
+                <label class="chip"><input type="radio" name="theme" value="midnight" /> $149 Party Bundle</label>
+              </fieldset>
+              <button class="btn btn-primary" type="submit">Notify me</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <aside class="proof">
+              <h3>Super early bird idea</h3>
+              <p>First 100 waitlist signups can get a steeper Kickstarter discount when live — note it in your campaign FAQ.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <img src="./images/logo-mark.svg" alt="" width="40" height="40" />
+          <div>
+            <div class="logo-word">Mellow<span style="color: var(--sun)">Munch</span></div>
+            <p>High-vibe snack kits. Food-forward always.</p>
+          </div>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="./themes.html">Themes</a>
+          <a href="./index.html#rewards">Rewards</a>
+          <a href="./about.html">Brand</a>
+          <a href="./join.html">Back</a>
+        </nav>
+        <p class="footer-note">Kickstarter campaign mockup · © 2026 Mellow Munch</p>
+      </div>
+    </footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
