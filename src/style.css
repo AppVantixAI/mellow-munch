@@ -830,10 +830,10 @@ h3,
 .footer-brand .logo-full {
   height: 3.75rem;
   max-width: min(85vw, 360px);
-  background: white;
-  border-radius: 0.75rem;
-  padding: 0.45rem 0.7rem;
-  border: 2px solid color-mix(in srgb, white 35%, var(--sun));
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: 0;
 }
 
 .footer-brand img.logo-mark {
