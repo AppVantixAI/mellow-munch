@@ -19,7 +19,8 @@
   --font-body: "Nunito", system-ui, sans-serif;
   --header-h: 5.25rem;
   --logo-h: 3.35rem;
-  --max: 1120px;
+  --max: 72rem;
+  --gutter: clamp(1rem, 2.2vw, 3rem);
   color-scheme: light;
 }
 
@@ -84,7 +85,7 @@ h3,
 }
 
 .wrap {
-  width: min(100% - 2rem, var(--max));
+  width: min(100% - (var(--gutter) * 2), var(--max));
   margin-inline: auto;
 }
 
@@ -963,6 +964,7 @@ h3,
   .pricing-panel,
   .footer-grid {
     grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(1.25rem, 2vw, 2.5rem);
   }
 
   .pricing-panel {
@@ -993,10 +995,90 @@ h3,
   }
 }
 
-.join-layout {
-  display: grid;
-  gap: 1.25rem;
-  align-items: start;
+/* Large desktops */
+@media (min-width: 1440px) {
+  :root {
+    --max: 80rem;
+    --logo-h: 3.55rem;
+    --header-h: 5.5rem;
+  }
+
+  .section {
+    padding-block: 4.25rem;
+  }
+
+  .hero {
+    padding-block: 2rem 3rem;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+  }
+}
+
+/* Ultrawide: widen the content rail, keep readable measure, full-bleed bands */
+@media (min-width: 1800px) {
+  :root {
+    --max: 90rem;
+    --gutter: clamp(2rem, 4vw, 5rem);
+  }
+
+  body {
+    background-size: auto, 640px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(28rem, 0.95fr) minmax(0, 1.05fr);
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .section-head {
+    max-width: 44rem;
+  }
+
+  .reward-grid,
+  .theme-grid {
+    gap: 1.35rem;
+  }
+
+  .strip {
+    padding-block: 1rem;
+  }
+
+  .strip-track {
+    font-size: 1.15rem;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  :root {
+    --max: 96rem;
+  }
+
+  /* Soft side fade so the endless pattern doesn’t dominate */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--foam) 88%, transparent) 0%,
+        transparent 14%,
+        transparent 86%,
+        color-mix(in srgb, var(--foam) 88%, transparent) 100%
+      );
+  }
+
+  main,
+  .site-footer {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .join-layout {
