@@ -112,10 +112,18 @@ h3,
   min-width: 0;
 }
 
-.logo img {
+.logo-full {
+  height: 2.55rem;
+  width: auto;
+  max-width: min(52vw, 240px);
+  object-fit: contain;
+  object-position: left center;
+}
+
+.logo-mark {
   width: 2.35rem;
   height: 2.35rem;
-  border-radius: 50%;
+  border-radius: 0.65rem;
   border: 2px solid var(--ink);
   object-fit: cover;
   background: var(--sun);
@@ -797,7 +805,16 @@ h3,
   align-items: center;
 }
 
-.footer-brand img {
+.footer-brand .logo-full {
+  height: 2.75rem;
+  max-width: min(70vw, 260px);
+  background: white;
+  border-radius: 0.65rem;
+  padding: 0.35rem 0.55rem;
+  border: 2px solid color-mix(in srgb, white 35%, var(--sun));
+}
+
+.footer-brand img.logo-mark {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
