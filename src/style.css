@@ -17,7 +17,8 @@
   --shadow: 0 16px 40px color-mix(in srgb, var(--teal-deep) 20%, transparent);
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
-  --header-h: 4.25rem;
+  --header-h: 5.25rem;
+  --logo-h: 3.35rem;
   --max: 1120px;
   color-scheme: light;
 }
@@ -113,9 +114,9 @@ h3,
 }
 
 .logo-full {
-  height: 2.55rem;
+  height: var(--logo-h);
   width: auto;
-  max-width: min(52vw, 240px);
+  max-width: min(72vw, 320px);
   object-fit: contain;
   object-position: left center;
 }
@@ -827,11 +828,11 @@ h3,
 }
 
 .footer-brand .logo-full {
-  height: 2.75rem;
-  max-width: min(70vw, 260px);
+  height: 3.75rem;
+  max-width: min(85vw, 360px);
   background: white;
-  border-radius: 0.65rem;
-  padding: 0.35rem 0.55rem;
+  border-radius: 0.75rem;
+  padding: 0.45rem 0.7rem;
   border: 2px solid color-mix(in srgb, white 35%, var(--sun));
 }
 
@@ -902,6 +903,15 @@ h3,
 @media (max-width: 859px) {
   body {
     background-attachment: scroll;
+  }
+
+  :root {
+    --header-h: 4.75rem;
+    --logo-h: 2.85rem;
+  }
+
+  .logo-full {
+    max-width: min(62vw, 240px);
   }
 
   .hero h1 {
