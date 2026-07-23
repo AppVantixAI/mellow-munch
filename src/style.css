@@ -146,7 +146,7 @@ h3,
 }
 
 .nav a {
-  padding: 0.35rem 0.15rem;
+  padding: 0.4rem 0.2rem;
   opacity: 0.82;
 }
 
@@ -159,22 +159,24 @@ h3,
   box-shadow: inset 0 -3px 0 var(--chili);
 }
 
-.nav-cta {
+.nav a.nav-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-left: 0.35rem;
-  padding: 0.65rem 1rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.2rem;
   border-radius: var(--radius-btn);
   background: var(--ink);
   color: var(--cream);
-  opacity: 1 !important;
-  box-shadow: none !important;
+  opacity: 1;
+  box-shadow: none;
+  line-height: 1.2;
 }
 
 .nav-toggle {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 2px solid var(--ink);
   border-radius: var(--radius-btn);
   background: white;
@@ -216,8 +218,12 @@ h3,
   box-shadow: var(--shadow);
 }
 
-.nav.open .nav-cta {
-  margin: 0.35rem 0 0;
+.nav.open .nav-cta,
+.nav.open a.nav-cta {
+  margin: 0.45rem 0 0;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.85rem 1.2rem;
 }
 
 .btn {
@@ -225,11 +231,14 @@ h3,
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
+  min-height: 3rem;
   border: 2.5px solid transparent;
   border-radius: var(--radius-btn);
-  padding: 0.9rem 1.25rem;
+  padding: 0.85rem 1.35rem;
   font: inherit;
+  font-size: 1rem;
   font-weight: 800;
+  line-height: 1.2;
   cursor: pointer;
   transition: transform 0.18s ease, background 0.18s ease;
 }
@@ -307,7 +316,17 @@ h3,
 .cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.75rem;
+}
+
+.cta-row .btn {
+  flex: 0 1 auto;
+}
+
+.form-panel .btn {
+  width: 100%;
+  min-height: 3.15rem;
+  padding: 0.95rem 1.35rem;
 }
 
 .hero-note {
@@ -724,13 +743,15 @@ h3,
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.8rem;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
   border: 2px solid var(--line);
   border-radius: 0.55rem;
   background: white;
   cursor: pointer;
   font-size: 0.92rem;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 .chip:has(input:checked) {
@@ -889,6 +910,18 @@ h3,
 
   .hero-media {
     aspect-ratio: 4 / 3;
+  }
+
+  .cta-row {
+    gap: 0.65rem;
+  }
+
+  .cta-row .btn {
+    flex: 1 1 calc(50% - 0.4rem);
+    min-width: 9.5rem;
+    min-height: 3.15rem;
+    padding: 0.9rem 1.1rem;
+    text-align: center;
   }
 }
 
